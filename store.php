@@ -49,7 +49,7 @@ else
           INNER JOIN `tbl_category`
           ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`
           ORDER BY `pd_id` DESC");
-  while ($row = mysql_fetch_object($res)) {
+  while ($row = mysqli_fetch_object($res)) {
     $products[] = $row;
   }
 }
