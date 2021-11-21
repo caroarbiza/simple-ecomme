@@ -9,7 +9,7 @@ if (!$link) {
 }
 
 
-$db = mysql_select_db(DB_DATABASE);
+$db = mysqli_select_db(DB_DATABASE);
 if(!$db) {
 	die("Unable to select database");
 }
