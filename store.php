@@ -44,7 +44,7 @@ elseif ( isset($_GET['category']) )
 }
 else
 {
-  $res = mysqli_query("SELECT `tbl_product`.*,`tbl_category`.`cat_name`
+  $res = mysqli_query($link,"SELECT `tbl_product`.*,`tbl_category`.`cat_name`
           FROM `tbl_product`
           INNER JOIN `tbl_category`
           ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`
