@@ -22,7 +22,7 @@ $ord_res = mysqli_query($link, "SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPA
 						WHERE `tbl_order`.`od_id` = `tbl_order_item`.`od_id` 
 						AND `tbl_product`.`pd_id` = `tbl_order_item`.`pd_id`
 						AND user_id=".$user_id." GROUP BY `od_id`");
-while ($row = mysql_fetch_object($ord_res)) {
+while ($row = mysqli_fetch_object($ord_res)) {
 	$orders[] = $row;
 }
 

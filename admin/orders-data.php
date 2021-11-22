@@ -17,7 +17,7 @@ $res = mysqli_query($link, "SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPARATO
 					WHERE `tbl_order`.`od_id` = `tbl_order_item`.`od_id` 
 					AND `tbl_product`.`pd_id` = `tbl_order_item`.`pd_id`
 					GROUP BY `od_id`");
-while ($row = mysql_fetch_object($res)) {
+while ($row = mysqli_fetch_object($res)) {
 	$orders[] = $row;
 }
 ?>

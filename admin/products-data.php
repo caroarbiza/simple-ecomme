@@ -17,7 +17,7 @@ $res = mysqli_query($link, "SELECT `tbl_product`.*,`tbl_category`.`cat_name`
 					FROM `tbl_product`
 					INNER JOIN `tbl_category`
 					ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`");
-while ($row = mysql_fetch_object($res)) {
+while ($row = mysqli_fetch_object($res)) {
 	$products[] = $row;
 }
 

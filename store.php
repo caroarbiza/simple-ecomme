@@ -25,7 +25,7 @@ if ( isset($_GET['search']) )
           ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`
           WHERE `pd_name` LIKE '%".$keyword."%'
           ORDER BY `pd_id` DESC");
-  while ($row = mysql_fetch_object($res)) {
+  while ($row = mysqli_fetch_object($res)) {
     $products[] = $row;
   }
 }
@@ -38,7 +38,7 @@ elseif ( isset($_GET['category']) )
           ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`
           WHERE `tbl_product`.`cat_id`=".$category."
           ORDER BY `pd_id` DESC");
-  while ($row = mysql_fetch_object($res)) {
+  while ($row = mysqli_fetch_object($res)) {
     $products[] = $row;
   }
 }

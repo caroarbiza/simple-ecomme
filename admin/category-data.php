@@ -18,7 +18,7 @@ $res = mysqli_query($link, "SELECT count(`tbl_product`.`cat_id`) as `product_cou
 					LEFT JOIN `tbl_product`
 					ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`
 					GROUP BY `tbl_category`.`cat_id`;");
-while ($row = mysql_fetch_object($res)) {
+while ($row = mysqli_fetch_object($res)) {
 	$categories[] = $row;
 }
 //handle new category request
