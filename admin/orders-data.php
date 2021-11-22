@@ -6,13 +6,13 @@ if (!$link) {
 	die("Cannot access db.");
 }
 
-$db = mysqli_select_db(DB_DATABASE);
+$db = mysqli_select_db($link, DB_DATABASE);
 if(!$db) {
 	die("Unable to select database");
 }
 $orders;
 //get all the categories
-$res = mysqli_query("SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPARATOR ', ')  as `products`
+$res = mysqli_query($link, "SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPARATOR ', ')  as `products`
 					FROM `tbl_order`,`tbl_order_item`, `tbl_product`
 					WHERE `tbl_order`.`od_id` = `tbl_order_item`.`od_id` 
 					AND `tbl_product`.`pd_id` = `tbl_order_item`.`pd_id`

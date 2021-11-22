@@ -13,13 +13,13 @@ else {
 		die("Cannot access db.");
 	}
 
-	$db = mysqli_select_db(DB_DATABASE);
+	$db = mysqli_select_db($link, DB_DATABASE);
 	if(!$db) {
 		die("Unable to select database");
 	}
 	$products;
 	//get all the categories
-	$res = mysqli_query("SELECT `tbl_product`.*,`tbl_category`.`cat_name`
+	$res = mysqli_query($link, "SELECT `tbl_product`.*,`tbl_category`.`cat_name`
 						FROM `tbl_product`
 						INNER JOIN `tbl_category`
 						ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`

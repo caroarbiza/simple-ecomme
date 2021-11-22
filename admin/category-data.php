@@ -7,13 +7,13 @@ if (!$link) {
 	die("Cannot access db.");
 }
 
-$db = mysqli_select_db(DB_DATABASE);
+$db = mysqli_select_db($link, DB_DATABASE);
 if(!$db) {
 	die("Unable to select database");
 }
 $categories;
 //get all the categories
-$res = mysqli_query("SELECT count(`tbl_product`.`cat_id`) as `product_count`,`tbl_category`.*
+$res = mysqli_query($link, "SELECT count(`tbl_product`.`cat_id`) as `product_count`,`tbl_category`.*
 					FROM `tbl_category`
 					LEFT JOIN `tbl_product`
 					ON `tbl_product`.`cat_id`=`tbl_category`.`cat_id`

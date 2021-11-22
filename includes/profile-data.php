@@ -9,15 +9,15 @@ if (!$link) {
 }
 
 
-$db = mysqli_select_db(DB_DATABASE);
+$db = mysqli_select_db($link, DB_DATABASE);
 if(!$db) {
 	die("Unable to select database");
 }
 
-$res = mysqli_query("SELECT * FROM tbl_user WHERE user_id=".$user_id." LIMIT 1");
+$res = mysqli_query($link, "SELECT * FROM tbl_user WHERE user_id=".$user_id." LIMIT 1");
 $user = mysql_fetch_assoc($res);
 
-$ord_res = mysqli_query("SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPARATOR ', ') as `products`
+$ord_res = mysqli_query($link, "SELECT `tbl_order`.*,GROUP_CONCAT(`pd_name` SEPARATOR ', ') as `products`
 						FROM `tbl_order`,`tbl_order_item`, `tbl_product`
 						WHERE `tbl_order`.`od_id` = `tbl_order_item`.`od_id` 
 						AND `tbl_product`.`pd_id` = `tbl_order_item`.`pd_id`
