@@ -1,8 +1,15 @@
 <?php
-	ini_set('display_errors',1);
-	error_reporting(-1);
-	define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'root');
-    define('DB_DATABASE', 'idukan');
+$DB_HOST = 'localhost'
+$DB_USER = 'root'
+$DB_PASSWORD = 'root'
+$DB_DATABASE = 'idukan'
+
+
+$link = new mysqli($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_DATABASE);
+
+// Check connection
+if ($mysqli -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $link-> connect_error;
+  exit();
+}
 ?>
