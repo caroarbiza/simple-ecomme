@@ -6,10 +6,10 @@ $DB_DATABASE = 'idukan';
 $PORT = 3306;
 
 
-$link = new mysqli($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_DATABASE,$PORT);
+$link = mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_DATABASE,$PORT);
 
 // Check connection
-if ($link -> connect_errno) {
+if (mysqli_connect_errno) {
   echo "Failed to connect to MySQL: " . $link-> connect_error;
   exit();
 }
