@@ -1,7 +1,7 @@
 <?php
 $DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASSWORD = 'root';
+$DB_USER = 'obl';
+$DB_PASSWORD = 'obli1234';
 $DB_DATABASE = 'idukan';
 
 
