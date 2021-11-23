@@ -12,13 +12,13 @@
 	$errflag = false;
 	
 	//Connect to mysql server
-	$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+	$link = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
 	if(!$link) {
 		die('Failed to connect to server: ' . mysql_error());
 	}
 	
 	//Select database
-	$db = mysqli_select_db($link, DB_DATABASE);
+	$db = mysqli_select_db($link, $DB_DATABASE);
 	if(!$db) {
 		die("Unable to select database");
 	}
