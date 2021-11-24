@@ -14,7 +14,7 @@
 	//Connect to mysql server
 	$link = mysqli_connect($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
 	if(!$link) {
-		die('Failed to connect to server: ' . mysql_error());
+		die('Failed to connect to server: ' . mysqli_error());
 	}
 	
 	//Select database
@@ -78,6 +78,6 @@
 			exit();
 		}
 	}else {
-		die("Query failed: ".mysql_error());
+		die("Query failed: ".mysqli_error());
 	}
 ?>
